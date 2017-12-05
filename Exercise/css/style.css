@@ -227,6 +227,15 @@
 .map img {
 	width: 100%;
 }
+/*contact*/
+.contact {
+	text-align: center;
+}
+.contact h2 {
+	color: #fff;
+	padding: 20px;
+	background: #0b9444;
+}
 
 
 
