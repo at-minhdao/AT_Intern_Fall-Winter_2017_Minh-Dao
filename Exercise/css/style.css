@@ -156,7 +156,7 @@
 }
 .projects .projects-picture {
 	/*margin: 0px 10%;*/
-	
+		
 }
 .projects .projects-picture::after {
 	content: '';
