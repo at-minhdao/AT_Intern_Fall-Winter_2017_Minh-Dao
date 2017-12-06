@@ -155,7 +155,20 @@
 	background: #0b9444;
 }
 .projects .projects-picture {
-
+	/*margin: 0px 10%;*/
+	
+}
+.projects .projects-picture::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.projects-picture .col-picture {
+	float: left;
+}
+.projects-picture .col-picture img{
+	display: block;
+	padding: 10px;
 }
 /*News - Event*/
 .news-event {
@@ -224,7 +237,7 @@
 	width: 100%;
 }
 /*map*/
-.map img {
+.map iframe {
 	width: 100%;
 }
 /*contact*/
