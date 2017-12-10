@@ -1,0 +1,14 @@
+.page-content {
+  width: 100%;
+}
+.header-small-page {
+  text-align: center;
+  border: 1px solid red;
+  h2 {
+    text-transform: uppercase;
+    color: map-get($color, black);
+    margin-top: 75px;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+}

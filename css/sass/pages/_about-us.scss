@@ -1,0 +1,30 @@
+#about-us {
+  border: 1px solid red;
+  margin: 25px 11.25%;
+}
+.about-us-content {
+  margin-top: 55px;  
+  ul::after {
+    @extend .clr;
+  }
+  li {
+    float: left;
+    width: 31.25%;
+    margin-left: 1.5625%;
+    h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    span {
+      color: map-get($color, primary);
+    }
+    p {
+      color: map-get($color, a);
+      margin: 25px 0;
+      text-align: justify;  
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
