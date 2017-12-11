@@ -1,0 +1,9 @@
+.btn-view {
+  text-decoration: none;
+  color: map-get($color, white);
+  padding: 10px;
+  text-transform: uppercase;
+  border: 1px solid map-get($color, white);
+  border-radius: 5px;
+  display: inline-block;
+}

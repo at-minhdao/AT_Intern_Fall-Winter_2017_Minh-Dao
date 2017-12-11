@@ -1,0 +1,23 @@
+#gallery{
+}
+.gallery-content { 
+  ul::after {
+    @extend .clr;
+  }
+  li {
+    float: left;
+    width: 23.7903226%;
+    margin-right: 1.6129032%;
+    p {
+      color: map-get($color, a);
+      margin: 25px 0;
+      text-align: justify;  
+    }
+    img {
+      width: 100%;
+    }
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+}

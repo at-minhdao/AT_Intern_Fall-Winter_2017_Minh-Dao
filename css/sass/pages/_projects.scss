@@ -1,0 +1,15 @@
+#projects {
+  text-align: center;
+}
+.projects-content {
+  ul::after {
+    @extend .clr;
+  }
+  li {
+    float: left;
+    width: 25%;
+    img {
+      width: 100%;
+    }
+  }
+}

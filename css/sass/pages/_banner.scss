@@ -1,0 +1,19 @@
+#banner {
+	text-align: center;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: cover;
+  height: 100vh;
+  text-transform: uppercase;  
+  color: map-get($color, white);
+  padding: 1px;
+  .banner-content {
+    margin-top: 15%;
+    h4 {
+      font-size: 26px;
+    }
+    h1 {
+      font-weight: bold;
+      margin: 5% 0;      
+    }
+  }
+}
