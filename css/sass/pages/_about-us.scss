@@ -1,6 +1,6 @@
 #about-us {
-  border: 1px solid red;
-  margin: 25px 11.25%;
+  background-color: map-get($color, b);
+  padding: 1px;
 }
 .about-us-content {
   margin-top: 55px;  
@@ -9,8 +9,8 @@
   }
   li {
     float: left;
-    width: 31.25%;
-    margin-left: 1.5625%;
+    width: 32.25%;
+    margin-right: 1.6129032%;
     h3 {
       text-transform: uppercase;
       font-weight: bold;
@@ -26,5 +26,8 @@
     img {
       width: 100%;
     }
+  }
+  li:last-child {
+    margin-right: 0;
   }
 }

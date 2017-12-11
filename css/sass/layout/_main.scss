@@ -1,9 +1,12 @@
 .page-content {
   width: 100%;
 }
+.container {
+  margin: 25px 11.25%;  
+}
 .header-small-page {
   text-align: center;
-  border: 1px solid red;
+  margin-bottom: 55px;
   h2 {
     text-transform: uppercase;
     color: map-get($color, black);

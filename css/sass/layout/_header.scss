@@ -1,6 +1,4 @@
 #header {
-  border: 1px solid red;
-  margin: 10px 11.25%;
 }
 #header::after {
   @extend .clr;
@@ -15,7 +13,7 @@
   }
   li {
     float: left;
-    padding: 15px;
+    padding-left: 15px;
   }
   li::before {
     content: "";

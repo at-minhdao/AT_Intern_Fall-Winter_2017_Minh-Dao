@@ -36,3 +36,11 @@
     }
   }
 }
+.bg-extension {
+  background-color: map-get($color, secondary);
+  height: 115px;
+  .btn-view {
+    margin-top: 30px;
+    padding: 10px 40px;
+  }
+}
