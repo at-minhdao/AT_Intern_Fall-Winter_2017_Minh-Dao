@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 3</title>
+</head>
+
+<body>
+  <script>
+    function upFirst(str) {
+      str = str.trim();
+      let l = str.length;
+      str = str.replace(str.charAt(0), str.charAt(0).toUpperCase());
+      for (let i = 0; i < 25; i++) {
+        if (str.charAt(i) === ' ') {
+          str = str.replace(str.charAt(i + 1), str.charAt(i + 1).toUpperCase());
+        }
+      }
+      return str;
+    }
+    document.write(upFirst("i'm a coder"));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 2</title>
+</head>
+<body>
+  <script>
+    function uniqueChar(str) {
+      let result = [];
+      result.push(str[0]);
+      let lstr = str.length;
+      for (let i = 1; i < lstr; i++) {
+        let count = 0;
+        let lresult = result.length;
+        for (let j = 0; j < lresult; j++) {
+          if (str[i] === result[j] || str[i] === " ") {
+            count++;
+          }
+        }
+        if (count === 0) {
+          result.push(str[i]);
+        }
+      }
+      return result;
+    }
+    document.write(uniqueChar("Dao   Thanh       Minh"));
+  </script>
+</body>
+</html>
