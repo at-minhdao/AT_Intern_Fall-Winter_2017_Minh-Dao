@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 5</title>
+</head>
+
+<body>
+  <script>
+    function mergeArray(a, b) {
+      let tmp = a.concat(b);
+      let l = tmp.length;
+      for (let i = 0; i < l; ++i) {
+        for (let j = i + 1; j < tmp.length; ++j) {
+          if (tmp[i] === tmp[j])
+            tmp.splice(j--, 1);
+        }
+      }
+      return tmp.sort(function (a, b) { return a - b });
+    }
+    document.write(mergeArray([1, 2, 3, 3], [2, 3, 4, 4]));
+  </script>
+</body>
+
+</html>
