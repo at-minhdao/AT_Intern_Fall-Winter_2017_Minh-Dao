@@ -7,16 +7,17 @@
   <title>Exercise 2</title>
 </head>
 <body>
-  <h2 id="minh">Minh Dao T.</h2>
+  <h2 id="my-name">Minh Dao T.</h2>
   <button onclick="removeFunc()">Remove Function</button>
+  <!-- JavaScript -->
   <script>
-    let idEl = document.getElementById("minh");
-    idEl.addEventListener("click", myFunc);
+    let idEl = document.getElementById('my-name');
+    idEl.addEventListener('click', myFunc);
     function myFunc() {
-      alert("Hello Word!");
+      alert('Hello Word!');
     }
     function removeFunc() {
-      idEl.removeEventListener("click", myFunc);
+      idEl.removeEventListener('click', myFunc);
     }
   </script>
 </body>

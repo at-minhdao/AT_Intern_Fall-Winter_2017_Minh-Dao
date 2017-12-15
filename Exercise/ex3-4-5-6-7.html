@@ -13,31 +13,32 @@
   <button onclick="replaceEl()">Replace Element</button>
   <button onclick="cloneN()">Clone Node</button>
   <hr>
-  <ul id="myList"></ul>
+  <ul id="js-my-list"></ul>
+  <!-- JavaScript -->
   <script>
     let i = 0;
     function createEl() {
       i++;
-      let node = document.createElement("LI");
-      let txt  = document.createTextNode("Item" + i);
+      let node = document.createElement('LI');
+      let txt  = document.createTextNode('Item' + i);
       node.appendChild(txt);
-      document.getElementById("myList").appendChild(node);
+      document.getElementById('js-my-list').appendChild(node);
     }
     function removeEl() {
-      let list = document.getElementById("myList");
+      let list = document.getElementById('js-my-list');
       list.removeChild(list.childNodes[0]);
     }
     function replaceEl() {
-      let node = document.createElement("LI");
-      let txt  = document.createTextNode("HEAD");
+      let node = document.createElement('LI');
+      let txt  = document.createTextNode('HEAD');
       node.appendChild(txt);
-      let list = document.getElementById("myList");
+      let list = document.getElementById('js-my-list');
       list.replaceChild(node, list.childNodes[0]);
     }
     function cloneN() {
-      let node = document.getElementById("myList").lastChild;
+      let node = document.getElementById('js-my-list').lastChild;
       let cln  = node.cloneNode(true);
-      document.getElementById("myList").appendChild(cln);
+      document.getElementById('js-my-list').appendChild(cln);
     }
   </script>
 </body>

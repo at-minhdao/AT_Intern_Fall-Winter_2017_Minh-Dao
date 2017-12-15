@@ -13,8 +13,7 @@
   </style>
 </head>
 <body>
-  <h2 id="minh" data="Đào Thanh Minh">Minh Dao T.</h2>
-  <h2 id="my-name"></h2>
+  <h2 id="my-name" data="Đào Thanh Minh">Minh Dao T.</h2>
   <button onclick="setAttr()">Set Attribute</button>
   <button onclick="removeAttr()">Remove Attribute</button>
   <button onclick="getAttr()">Get Attribute</button>
@@ -22,14 +21,14 @@
   <!-- JavaScript -->
   <script>
     function setAttr() {
-      document.getElementById("minh").setAttribute("class", "active");
+      document.getElementById('my-name').setAttribute('class', 'active');
     }
     function getAttr() {
-      let name = document.getElementById("minh").getAttribute("data");
+      let name = document.getElementById('my-name').getAttribute('data');
       alert(name);
     }
     function removeAttr() {
-      document.getElementById("minh").removeAttribute("class", "active");
+      document.getElementById('my-name').removeAttribute('class', 'active');
     }
   </script>
 </body>
