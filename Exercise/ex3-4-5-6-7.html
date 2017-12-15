@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 3, 4, 5, 6, 7</title>
+</head>
+<body>
+  <h2>Minh Dao T.</h2>
+  <button onclick="createEl()">Create Element</button>
+  <button onclick="removeEl()">Remove Element</button>
+  <button onclick="replaceEl()">Replace Element</button>
+  <button onclick="cloneN()">Clone Node</button>
+  <hr>
+  <ul id="js-my-list"></ul>
+  <!-- JavaScript -->
+  <script>
+    let i = 0;
+    function createEl() {
+      i++;
+      let node = document.createElement('LI');
+      let txt  = document.createTextNode('Item' + i);
+      node.appendChild(txt);
+      document.getElementById('js-my-list').appendChild(node);
+    }
+    function removeEl() {
+      let list = document.getElementById('js-my-list');
+      list.removeChild(list.childNodes[0]);
+    }
+    function replaceEl() {
+      let node = document.createElement('LI');
+      let txt  = document.createTextNode('HEAD');
+      node.appendChild(txt);
+      let list = document.getElementById('js-my-list');
+      list.replaceChild(node, list.childNodes[0]);
+    }
+    function cloneN() {
+      let node = document.getElementById('js-my-list').lastChild;
+      let cln  = node.cloneNode(true);
+      document.getElementById('js-my-list').appendChild(cln);
+    }
+  </script>
+</body>
+</html>

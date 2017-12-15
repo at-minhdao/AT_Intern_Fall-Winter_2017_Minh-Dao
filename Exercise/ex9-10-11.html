@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 9, 10, 11</title>
+  <style>
+    .active {
+      color: green;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="my-name" data="Đào Thanh Minh">Minh Dao T.</h2>
+  <button onclick="setAttr()">Set Attribute</button>
+  <button onclick="removeAttr()">Remove Attribute</button>
+  <button onclick="getAttr()">Get Attribute</button>
+
+  <!-- JavaScript -->
+  <script>
+    function setAttr() {
+      document.getElementById('my-name').setAttribute('class', 'active');
+    }
+    function getAttr() {
+      let name = document.getElementById('my-name').getAttribute('data');
+      alert(name);
+    }
+    function removeAttr() {
+      document.getElementById('my-name').removeAttribute('class', 'active');
+    }
+  </script>
+</body>
+</html>
