@@ -96,12 +96,19 @@
     var $listButton = document.getElementsByClassName('js-btn-buy');
     for (var i of $listButton) {
       i.addEventListener('click', function () {
+        var l = cart.length
+        for (var i = 0; i < l; i++) {
+          if (this.getAttribute('data-name') === cart[i]['name']) {
+            cart[i]['amount'] += 1;
+            return;
+          }
+        } 
         var $item = {
-          name: this.getAttribute('data-name'),
+          name:  this.getAttribute('data-name'),
           price: this.getAttribute('data-price'),
+          amount: 1,
         }
         cart.push($item);
-        console.log(cart);
       });
     }
 
@@ -109,20 +116,20 @@
     function showCart() {
       if (cart.length > 0) {
         var listCart = '<table class="table"><thead><tr><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Amount</th><th scope="col">Total</th></tr></thead><tbody>';
-        var name, price, amount, total;
+        var name, price, amount, total, sum = 0;
         var l = cart.length
         for (var i = 0; i < l; i++) {
-          name = '<td>' + cart[i]['name'] + '</td>';
-          price = '<td>' + cart[i]['price'] + '</td>';
-          amount = '<td>' + '1' + '</td>';
-          total = '<td>' + cart[i]['price'] + '</td>';
+          name      = '<td>' + cart[i]['name'] + '</td>';
+          price     = '<td>' + cart[i]['price'] + '</td>';
+          amount    = '<td>' + cart[i]['amount'] + '</td>';
+          total     = '<td>' + (cart[i]['price'] * cart[i]['amount']) + '</td>';
           listCart += '<tr>' + name + price + amount + total + '</tr>';
+          sum      += (cart[i]['price'] * cart[i]['amount']);
         }
-        listCart += '</tbody></table>';
+        listCart += '<tr><td></td><td></td><td><strong>Money</strong></td><td>' + sum + '</td></tr></tbody></table>';
         document.getElementById('js-show-cart').innerHTML = listCart;
       }
     }
-
   </script>
 
 </body>
