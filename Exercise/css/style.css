@@ -1,0 +1,256 @@
+#header {
+	margin: 10px 10%;
+	text-align: center;
+	/*border: 1px solid red;*/
+}
+#header::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+#header .logo {
+	float: left;
+}
+#header .menu-bar {
+	float: right;
+}
+#header .menu-bar ul::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+#header .menu-bar ul li {
+	float: left;
+	margin: 25px 0px 0px 20px;
+	text-transform: uppercase;
+}
+#header .menu-bar ul li::before {
+	content: "";
+	display: inline-block;
+	border: 5px solid #0b9444;
+	border-radius: 50%;
+	margin-right: 5px;
+
+}
+#header .menu-bar ul li:first-child::before {
+	content: "";
+	border: 0px;
+}
+#header .menu-bar ul li a{
+	text-decoration: none;
+	color: #000;
+}
+/*main*/
+.banner {
+	/*border: 1px solid red;*/
+	text-align: center;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: cover;
+	/*height: 500px;*/
+	/*position: relative;*/
+}
+.banner section{
+	left: 40%;
+	top: 40%;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 200px 0;
+}
+
+.banner h2{
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+.banner h3{
+	font-size: 50px;
+	margin-bottom: 40px;
+}
+.banner a{
+	font-size: 30px;
+	margin-bottom: 20px;
+	text-decoration: none;
+	border: 1px solid #fff;
+	border-radius: 5%;
+	padding: 10px;
+	color: #fff;
+}
+/*about us*/
+.icon-home i::before {
+	content: "";
+}
+.icon-home img {
+	margin: 15px 0px;
+}
+.about-us {
+	margin: 10px 10%;
+	/*border: 1px solid red;*/
+	text-align: center;
+}
+.title-content{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 30px;
+}
+.about-content {
+	text-align: left;
+}
+.about-content article {
+	display: inline-block;
+	width: 32%;
+	margin-left: 1%
+}
+.about-content h3 {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.about-content p {
+	text-align: justify;
+	margin: 10px 0px;
+}
+.about-content span {
+	color: #0b9444;
+}
+.about-content img {
+	width: 100%;
+}
+/*products*/
+.products {
+	/*border: 1px solid red;*/
+	text-align: center;
+	margin-top: 30px
+}
+.menu {
+	margin-bottom: 20px;
+}
+.menu li{
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 20px;
+}
+.products .menu li:first-child{
+	border: 1px solid #0b9444;
+	border-radius: 5px;
+	padding: 10px;
+	background: #0b9444;
+
+}
+.menu a{
+	text-decoration: none;
+	color: #000;
+	text-transform: uppercase;
+}
+.products-picture  img {
+	width: 24.8%;
+}
+/*projects*/
+.projects {
+	/*border: 1px solid red;*/
+	text-align: center;
+	margin-top: 30px
+}
+.projects .menu li:last-child {
+	border: 1px solid #0b9444;
+	border-radius: 5px;
+	padding: 10px;
+	background: #0b9444;
+}
+.projects .projects-picture {
+	/*margin: 0px 10%;*/
+		
+}
+.projects .projects-picture::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.projects-picture .col-picture {
+	float: left;
+}
+.projects-picture .col-picture img{
+	display: block;
+	padding: 10px;
+}
+/*News - Event*/
+.news-event {
+	/*border: 1px solid red;*/
+	text-align: center;
+	margin-top: 30px;
+	background: url(../images/event-bg.jpg) no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.news-event h2 {
+	padding-top: 30px;
+}
+.news-event-content {
+	margin: 0px 10%;
+}
+.news-event-content article {
+	display: inline-block;
+	text-align: left;
+	width: 32%;
+	margin-left: 1%;
+	padding-bottom: 60px;
+}
+.news-event-content h3 {
+	font-weight: bold;
+	margin: 20px 0px;
+}
+.news-event-content p {
+	text-align: justify;
+	margin: 10px 0px;
+}
+.news-event-content span {
+	color: #0b9444;
+}
+.news-event-content img {
+	width: 100%;
+}
+/*gallery*/
+.gallery {
+	/*border: 1px solid red;*/
+	text-align: center;
+	margin-top: 30px;
+}
+.gallery-content {
+	margin: 10px 10% 0px 10%;
+}
+.gallery-content article {
+	display: inline-block;
+	text-align: left;
+	width: 23%;
+	margin-left: 1.5%;
+	padding-bottom: 60px;
+}
+.gallery-content h3 {
+	font-weight: bold;
+	margin: 20px 0px;
+}
+.gallery-content p {
+	text-align: justify;
+	margin: 10px 0px;
+}
+.gallery-content span {
+	color: #0b9444;
+}
+.gallery-content img {
+	width: 100%;
+}
+/*map*/
+.map iframe {
+	width: 100%;
+}
+/*contact*/
+.contact {
+	text-align: center;
+}
+.contact h2 {
+	color: #fff;
+	padding: 20px;
+	background: #0b9444;
+}
+
+
+
+
+
