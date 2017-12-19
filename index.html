@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+  <title>Exercise</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Minh Dao T.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item dropdown">
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="js-btn-cart" type="button">(<span id="js-quality-product">0</span>)Cart</button>
+      </form>
+    </div>
+  </nav>
+
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Shopping</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>List Products</h2>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Item 1</h2>
+          <p>200</p>
+          <p>
+            <a class="btn btn-secondary js-btn-buy" href="#" data-name="Product 1" data-price="200" role="button">Buy</a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Item 2</h2>
+          <p>100</p>
+          <p>
+            <a class="btn btn-secondary js-btn-buy" href="#" data-name="Product 2" data-price="100" role="button">Buy</a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Item 3</h2>
+          <p>300</p>
+          <p>
+            <a class="btn btn-secondary js-btn-buy" href="#" data-name="Product 3" data-price="300" role="button">Buy</a>
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+    </div>
+    <!-- /container -->
+    <!-- show cart -->
+    <div class="container">
+      <div class="row" id="js-show-cart">
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="container">
+    <p>© Company 2017</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    var cart = [];
+
+    var $listButton = document.getElementsByClassName('js-btn-buy');
+    for (var i of $listButton) {
+      i.addEventListener('click', function () {
+        var l = cart.length
+        for (var i = 0; i < l; i++) {
+          if (this.getAttribute('data-name') === cart[i]['name']) {
+            cart[i]['amount'] += 1;
+            showCart();
+            return;
+          }
+        } 
+        var $item = {
+          name:  this.getAttribute('data-name'),
+          price: this.getAttribute('data-price'),
+          amount: 1,
+        }
+        cart.push($item);
+        showQualityProducts();
+        showCart();
+      });
+    }
+    function showQualityProducts() {
+      var counter = cart.length;
+      document.getElementById('js-quality-product').innerHTML = counter;
+    }
+
+    document.getElementById('js-btn-cart').addEventListener('click', showCart);
+    function showCart() {
+      if (cart.length > 0) {
+        var listCart = '<table class="table"><thead><tr><td colspan=3 align="center">My Cart</td></tr>';
+        listCart += '<tr><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Amount</th><th scope="col">Total</th><th>Option</th></tr>';
+        listCart += '</thead><tbody>';
+        var name, price, amount, total, sum = 0;
+        var l = cart.length
+        for (var i = 0; i < l; i++) {
+          name      = '<td>' + cart[i]['name'] + '</td>';
+          price     = '<td>' + cart[i]['price'] + '</td>';
+          amount    = '<td>' + cart[i]['amount'] + '</td>';
+          total     = '<td>' + (cart[i]['price'] * cart[i]['amount']) + '</td>';
+          del       = '<td><button class="btn btn-danger js-btn-del" data-id="' + i + '">Del</button></td>';
+          listCart += '<tr id="js-row-' + i + '">' + name + price + amount + total + del + '</tr>';
+          sum      += (cart[i]['price'] * cart[i]['amount']);
+        }
+        listCart += '<tr><td></td><td></td><td><strong>Money</strong></td><td>' + sum + '</td></tr></tbody></table>';
+        document.getElementById('js-show-cart').innerHTML = listCart;
+        var $btnDels = document.getElementsByClassName('js-btn-del');
+        for(var el of $btnDels) {
+          el.addEventListener('click', function() {
+            var index = this.getAttribute('data-id');
+            if (index > -1) {
+              cart.splice(index, 1);
+            }
+            showCart();
+          });
+        }
+      } else {
+        document.getElementById('js-show-cart').innerHTML = "";
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
