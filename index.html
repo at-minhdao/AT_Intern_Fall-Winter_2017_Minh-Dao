@@ -31,7 +31,7 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-success my-2 my-sm-0" id="js-btn-cart" type="button">Cart</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" id="js-btn-cart" type="button">(<span id="js-quality-product">0</span>)Cart</button>
       </form>
     </div>
   </nav>
@@ -41,13 +41,12 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1 class="display-3">Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron
-          and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <h1 class="display-3">Shopping</h1>
       </div>
     </div>
 
     <div class="container">
+      <h2>List Products</h2>
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
@@ -100,6 +99,7 @@
         for (var i = 0; i < l; i++) {
           if (this.getAttribute('data-name') === cart[i]['name']) {
             cart[i]['amount'] += 1;
+            showCart();
             return;
           }
         } 
@@ -109,13 +109,21 @@
           amount: 1,
         }
         cart.push($item);
+        showQualityProducts();
+        showCart();
       });
+    }
+    function showQualityProducts() {
+      var counter = cart.length;
+      document.getElementById('js-quality-product').innerHTML = counter;
     }
 
     document.getElementById('js-btn-cart').addEventListener('click', showCart);
     function showCart() {
       if (cart.length > 0) {
-        var listCart = '<table class="table"><thead><tr><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Amount</th><th scope="col">Total</th></tr></thead><tbody>';
+        var listCart = '<table class="table"><thead><tr><td colspan=3 align="center">My Cart</td></tr>';
+        listCart += '<tr><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Amount</th><th scope="col">Total</th><th>Option</th></tr>';
+        listCart += '</thead><tbody>';
         var name, price, amount, total, sum = 0;
         var l = cart.length
         for (var i = 0; i < l; i++) {
@@ -123,13 +131,27 @@
           price     = '<td>' + cart[i]['price'] + '</td>';
           amount    = '<td>' + cart[i]['amount'] + '</td>';
           total     = '<td>' + (cart[i]['price'] * cart[i]['amount']) + '</td>';
-          listCart += '<tr>' + name + price + amount + total + '</tr>';
+          del       = '<td><button class="btn btn-danger js-btn-del" data-id="' + i + '">Del</button></td>';
+          listCart += '<tr id="js-row-' + i + '">' + name + price + amount + total + del + '</tr>';
           sum      += (cart[i]['price'] * cart[i]['amount']);
         }
         listCart += '<tr><td></td><td></td><td><strong>Money</strong></td><td>' + sum + '</td></tr></tbody></table>';
         document.getElementById('js-show-cart').innerHTML = listCart;
+        var $btnDels = document.getElementsByClassName('js-btn-del');
+        for(var el of $btnDels) {
+          el.addEventListener('click', function() {
+            var index = this.getAttribute('data-id');
+            if (index > -1) {
+              cart.splice(index, 1);
+            }
+            showCart();
+          });
+        }
+      } else {
+        document.getElementById('js-show-cart').innerHTML = "";
       }
     }
+
   </script>
 
 </body>
