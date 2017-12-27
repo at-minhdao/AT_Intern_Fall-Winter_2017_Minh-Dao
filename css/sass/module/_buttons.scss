@@ -1,0 +1,7 @@
+.btn-more {
+  font-family: $font-title;
+  font-size: 27px;
+  padding: 10px 40px 0px 40px;
+  background-color: map-get($color, primary);
+  color: map-get($color, white);
+}

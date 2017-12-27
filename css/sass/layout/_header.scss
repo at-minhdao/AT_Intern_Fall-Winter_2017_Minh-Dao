@@ -1,0 +1,32 @@
+#header {
+  text-align: center;
+}
+.bg-logo {
+  background-image: url("../images/header-clouds.png");
+  background-color: map-get($color, c);
+  padding: 37px 0;
+}
+.menu-bar-container {
+  border-top: 4px double map-get($color, b);
+  border-bottom: 4px double map-get($color, b);
+  padding: 15px 0;
+  li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    a {
+      padding: 0 20px;
+      font-size: 14px;
+      line-height: 25px;
+      letter-spacing: 2px;
+      font-family: $font-primary-semi-bold;
+    }
+  }
+  li::after {
+    content: "/";
+    color: map-get($color, b);
+  }
+  li:last-child::after {
+    content: "";
+  }
+}
